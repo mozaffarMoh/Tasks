@@ -1,10 +1,14 @@
 /** @type {import('next').NextConfig} */
 
-
 const nextConfig = {
   reactStrictMode: true,
   distDir: 'out',
-  output: "export",  // <=== enables static exports
+  exportPathMap: async function () {
+    return {
+      '/': { page: '/' }, // Example path to export statically
+      // Add more paths as needed
+    };
+  },
   basePath: "/TasksTest",
 };
 
