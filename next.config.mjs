@@ -2,11 +2,16 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  distDir: 'out',
-  exportPathMap: async function () {
+  distDir: "out",
+  generateStaticPaths: async function () {
     return {
-      '/': { page: '/' }, // Example path to export statically
-      // Add more paths as needed
+      // Define your static paths here
+      paths: {
+        "/": { page: "/" },
+        // Add more paths as needed
+      },
+      // Additional options
+      // fallback: false // Set to true if you want to enable fallback behavior
     };
   },
   basePath: "/TasksTest",
