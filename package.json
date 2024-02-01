@@ -4,7 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "npm run build && gh-pages -d .next",
+    "deploy": "npm run build && gh-pages -d out",
     "predeploy": "next build"
   },
   "homepage": "https://ferasmoh.github.io/TasksTest",
