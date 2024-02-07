@@ -58,7 +58,7 @@ function RootLayout(props: React.PropsWithChildren) {
   return (
     <html lang="en">
       <body>
-        <I18nextProvider i18n={i18n}>
+        {/*     <I18nextProvider i18n={i18n}>
           {showAppbar ? (
             <Box>
               {token && <Appbar />}
@@ -67,10 +67,10 @@ function RootLayout(props: React.PropsWithChildren) {
                 {token && <Footer />}
               </Container>
             </Box>
-          ) : (
-            <main>{props.children}</main>
-          )}
-        </I18nextProvider>
+          ) : ( */}
+        <main>{props.children}</main>
+        {/*  )}
+        </I18nextProvider> */}
       </body>
     </html>
   );
