@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 const Home = () => {
-  const router = useRouter();
+  /*   const router = useRouter();
   let role = Cookies.get("role");
   let isAdmin: any = role === "admin";
   let isUser: any = role === "user";
@@ -21,9 +21,13 @@ const Home = () => {
     } else {
       router.push("/pages/auth/login-admin");
     }
-  }, []);
+  }, []); */
 
-  return <Box></Box>;
+  return (
+    <Box>
+      <h1>Home</h1>
+    </Box>
+  );
 };
 
 export default Home;
