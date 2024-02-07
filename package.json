@@ -3,9 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "deploy": "npm run build && gh-pages -d out",
-    "predeploy": "next build"
+    "start": "next start"
   },
   "homepage": "https://ferasmoh.github.io/TasksTest",
   "dependencies": {
@@ -21,7 +19,7 @@
     "@reduxjs/toolkit": "1.9.5",
     "@types/react-i18next": "^8.1.0",
     "@types/uuid": "^9.0.5",
-    "axios": "^1.6.0",
+    "axios": "^1.6.7",
     "dayjs": "^1.11.10",
     "i18next": "^23.7.6",
     "js-cookie": "^3.0.5",
@@ -46,7 +44,6 @@
     "@types/react-helmet": "^6.1.9",
     "@types/redux-logger": "3.0.9",
     "concurrently": "^8.2.2",
-    "gh-pages": "^6.1.1",
     "http-server": "^14.1.1",
     "redux-logger": "3.0.6",
     "typescript": "5.1.3"
