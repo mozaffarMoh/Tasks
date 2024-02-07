@@ -70,7 +70,7 @@ function RootLayout(props: React.PropsWithChildren) {
           ) : ( */}
         <main>{props.children}</main>
         {/*  )}
-        </I18nextProvider> */}
+        </I18nextProvider>  */}
       </body>
     </html>
   );
