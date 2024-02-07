@@ -2,7 +2,6 @@
 
 "use client";
 import "./styles/globals.css";
-import { Tilt_Neon } from "next/font/google";
 import Appbar from "./components/Appbar/Appbar";
 import Footer from "./components/Footer/footer";
 import { Box, Container } from "@mui/material";
@@ -12,12 +11,6 @@ import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
-
-/* custom new Font */
-const tiltNeonFont: NextFont = Tilt_Neon({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 function RootLayout(props: React.PropsWithChildren) {
   /* check if showAppbar equal true then Appbar will be shown ,if false hide Appbar  */
