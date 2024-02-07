@@ -8,7 +8,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { UsersRowInterface } from "@/app/DTOs/DTOs";
 import api from "@/app/api/api/api";
 import { t } from "i18next";
-import moment from "Moment";
+import moment from "moment";
 import ErrorSnackBar from "@/app/components/Notify/Error-Snackbar/ErrorSnackbar";
 import Loading from "@/app/components/Notify/Loading/loading";
 import SuccessSnackBar from "@/app/components/Notify/Success-Snackbar/successSnackbar";
