@@ -14,7 +14,7 @@ import Loading from "@/app/components/Notify/Loading/loading";
 import SuccessSnackBar from "@/app/components/Notify/Success-Snackbar/successSnackbar";
 import api from "@/app/api/api/api";
 import ConfirmationDialog from "@/app/components/ConfirmationDialog/ConfirmationDialog";
-import moment from "Moment";
+import moment from "moment";
 import { t } from "i18next";
 import withAuthAdmin from "@/app/withAuth/withAuthAdmin";
 import Cookies from "js-cookie";

@@ -15,7 +15,7 @@ import {
   MenuItem,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
-import moment from "Moment";
+import moment from "moment";
 import api from "@/app/api/api/api";
 import { t } from "i18next";
 import dayjs from "dayjs";
