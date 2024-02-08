@@ -69,7 +69,7 @@ function RootLayout(props: React.PropsWithChildren) {
             </Box>
           ) : (
             <main>{props.children}</main>
-          )}
+          )} 
         </I18nextProvider>
       </body>
     </html>
