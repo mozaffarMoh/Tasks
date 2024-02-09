@@ -288,8 +288,5 @@ const Tasks = () => {
   );
 };
 
-Tasks.getInitialProps = async () => {
-  return {};
-};
 
 export default withAuthAdmin(Tasks);

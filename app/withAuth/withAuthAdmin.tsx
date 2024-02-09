@@ -7,10 +7,15 @@ const withAuthAdmin = <P extends object>(
 ) => {
   const withAuth: React.FC<P> = (props) => {
     const router = useRouter();
+    const token = Cookies.get("role") === "admin";
     const admin = Cookies.get("role") === "admin";
 
     useEffect(() => {
-      !admin && router.push("/pages/tasks-user");
+      if (token) {
+        !admin && router.push("/pages/tasks-user");
+      } else {
+        router.push("/pages/auth/login-admin");
+      }
     }, [router]);
 
     return <>{admin ? <WrappedComponent {...props} /> : null}</>;

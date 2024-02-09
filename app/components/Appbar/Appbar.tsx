@@ -47,8 +47,8 @@ export default function Appbar() {
 
   /* Change Language */
   function changeLanguage(lang: string) {
-    const savedLang: any = Cookies.set("language", lang);
-    i18n.changeLanguage(savedLang);
+    Cookies.set("language", lang);
+    i18n.changeLanguage(lang);
     window.location.reload();
   }
 
