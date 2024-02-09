@@ -92,7 +92,7 @@ const LoginAdmin = () => {
 
   /* Handle Routing */
   const goToUserLoginPage = () => {
-    router.push("/pages/auth/user-login");
+    router.push("/pages/auth/login-user");
   };
   const goToRegisterPage = () => {
     router.push("/pages/auth/register-user");

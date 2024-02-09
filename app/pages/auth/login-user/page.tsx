@@ -88,6 +88,14 @@ const LoginUser = () => {
     }
   };
 
+  /* Handle Routing */
+  const goToAdminLoginPage = () => {
+    router.push("/pages/auth/login-admin");
+  };
+  const goToRegisterPage = () => {
+    router.push("/pages/auth/register-user");
+  };
+
   return (
     /* All Page Container */
     <Grid container direction={"column"}>
@@ -234,11 +242,9 @@ const LoginUser = () => {
 
           {/* Pages Links */}
           <Grid item xs={4} display={"flex"} flexDirection={"column"}>
-            <Link href="/pages/auth/login-admin">{t("login.admin-link")}</Link>
+            <a onClick={goToAdminLoginPage}>{t("login.admin-link")}</a>
             <br />
-            <Link href="/pages/auth/register-user">
-              {t("login.register-link")}
-            </Link>
+            <a onClick={goToRegisterPage}>{t("login.register-link")}</a>
           </Grid>
         </Grid>
 
