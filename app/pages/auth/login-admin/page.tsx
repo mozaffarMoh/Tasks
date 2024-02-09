@@ -9,8 +9,10 @@ import {
   TextField,
   Grid,
   Link,
+  Typography,
 } from "@mui/material";
 import * as React from "react";
+import "../auth.scss";
 import Image from "next/image";
 import LoginImage from "../../../../public/images/login.jpg";
 import TasksIcon from "../../../icon.ico";
@@ -86,6 +88,14 @@ const LoginAdmin = () => {
         setShowError(false);
       }, 3000);
     }
+  };
+
+  /* Handle Routing */
+  const goToUserLoginPage = () => {
+    router.push("/pages/auth/user-login");
+  };
+  const goToRegisterPage = () => {
+    router.push("/pages/auth/register-user");
   };
 
   return (
@@ -234,11 +244,11 @@ const LoginAdmin = () => {
 
           {/* Pages Links */}
           <Grid item xs={4} display={"flex"} flexDirection={"column"}>
-            <Link href="/pages/auth/login-user">{t("login.user-link")}</Link>
+            <a onClick={goToUserLoginPage}>
+              {t("login.user-link")}
+            </a>
             <br />
-            <Link href="/pages/auth/register-user">
-              {t("login.register-link")}
-            </Link>
+            <a onClick={goToRegisterPage}>{t("login.register-link")}</a>
           </Grid>
         </Grid>
 

@@ -1,0 +1,9 @@
+a {
+    color: rgb(147, 51, 236);
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+        color: rgb(147, 51, 236, 0.7);
+    }
+}
