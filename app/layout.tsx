@@ -5,12 +5,14 @@ import "./styles/globals.css";
 import Appbar from "./components/Appbar/Appbar";
 import Footer from "./components/Footer/footer";
 import { Box, Container } from "@mui/material";
-import { redirect, useRouter, usePathname } from "next/navigation";
-import { NextFont } from "next/dist/compiled/@next/font";
+import { redirect, usePathname } from "next/navigation";
+import { Inter } from "next/font/google";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
+
+const fontType = Inter({ subsets: ["latin"] });
 
 function RootLayout(props: React.PropsWithChildren) {
   /* check if showAppbar equal true then Appbar will be shown ,if false hide Appbar  */
@@ -60,7 +62,7 @@ function RootLayout(props: React.PropsWithChildren) {
       <body>
         <I18nextProvider i18n={i18n}>
           {showAppbar ? (
-            <Box>
+            <Box className={fontType.className}>
               {token && <Appbar />}
               <Container className="appContainer" maxWidth="lg">
                 {props.children}
@@ -68,8 +70,8 @@ function RootLayout(props: React.PropsWithChildren) {
               </Container>
             </Box>
           ) : (
-            <main>{props.children}</main>
-          )} 
+            <main className={fontType.className}>{props.children}</main>
+          )}
         </I18nextProvider>
       </body>
     </html>
