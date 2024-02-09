@@ -20,7 +20,6 @@ import ConfirmationDialog from "../ConfirmationDialog/ConfirmationDialog";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import Cookies from "js-cookie";
-import Link from "next/link";
 
 export default function Appbar() {
   const { t, i18n } = useTranslation();
@@ -77,20 +76,21 @@ export default function Appbar() {
           <Image src={TasksIcon} alt="TasksIcon" width={35} />
 
           {/* Tasks */}
-          <Link
-            href={isAdmin ? "/pages/tasks" : "/pages/tasks-user"}
+          <Button
+            onClick={handleTasksRouting}
             color={
               pathName === "/pages/tasks" || pathName === "/pages/tasks-user"
                 ? "warning"
                 : "inherit"
             }
+            sx={{ marginLeft: "15px" }}
           >
             {t("appbar.tasks")}
-          </Link>
+          </Button>
 
           {/* Users */}
           <Button
-            href={isAdmin ? "/pages/users" : "/pages/users-admins"}
+            onClick={handleUsersRouting}
             color={
               pathName === "/pages/users" || pathName === "/pages/users-admins"
                 ? "warning"
