@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import * as React from "react";
 import Image from "next/image";
-import LoginImage from "../../../../public/images/login.png";
+import LoginImage from "../../../../public/images/login.jpg";
 import TasksIcon from "../../../icon.ico";
 import SuccessSnackBar from "@/app/components/Notify/Success-Snackbar/successSnackbar";
 import ErrorSnackBar from "@/app/components/Notify/Error-Snackbar/ErrorSnackbar";
