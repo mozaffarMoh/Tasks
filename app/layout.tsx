@@ -9,12 +9,13 @@ import { redirect, usePathname } from "next/navigation";
 import { Inter } from "next/font/google";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 
 const fontType = Inter({ subsets: ["latin"] });
 
 function RootLayout(props: React.PropsWithChildren) {
+  const [isCSR, setIsCSR] = useState(false);
   /* check if showAppbar equal true then Appbar will be shown ,if false hide Appbar  */
   const token: any = Cookies.get("Token");
   const pathName = usePathname();
@@ -57,20 +58,28 @@ function RootLayout(props: React.PropsWithChildren) {
     }
   }, [token]);
 
+  useEffect(() => {
+    setIsCSR(true);
+  }, []);
+
   return (
     <html lang="en">
       <body>
         <I18nextProvider i18n={i18n}>
           {showAppbar ? (
-            <Box className={fontType.className}>
-              {token && <Appbar />}
-              <Container className="appContainer" maxWidth="lg">
-                {props.children}
-                {token && <Footer />}
-              </Container>
-            </Box>
+            isCSR && (
+              <Box className={fontType.className}>
+                <Appbar />
+                <Container className="appContainer" maxWidth="lg">
+                  {props.children}
+                  <Footer />
+                </Container>
+              </Box>
+            )
           ) : (
-            <main className={fontType.className}>{props.children}</main>
+            <main className={fontType.className}>
+              {isCSR && props.children}
+            </main>
           )}
         </I18nextProvider>
       </body>

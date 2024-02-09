@@ -23,7 +23,10 @@ const Home = () => {
     }
   }, []);
 
-  return <Box></Box>;
+  return (
+    <Box>
+    </Box>
+  );
 };
 
 export default Home;

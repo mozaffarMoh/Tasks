@@ -7,7 +7,7 @@ const withAuthAdmin = <P extends object>(
 ) => {
   const withAuth: React.FC<P> = (props) => {
     const router = useRouter();
-    const token = Cookies.get("role") === "admin";
+    const token = Cookies.get("Token");
     const admin = Cookies.get("role") === "admin";
 
     useEffect(() => {

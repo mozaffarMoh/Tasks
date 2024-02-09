@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 const withAuthUser = <P extends object>(WrappedComponent: ComponentType<P>) => {
   const withAuth: React.FC<P> = (props) => {
     const router = useRouter();
-    const token = Cookies.get("role") === "user";
+    const token = Cookies.get("Token")
     const user = Cookies.get("role") === "user";
 
     useEffect(() => {
