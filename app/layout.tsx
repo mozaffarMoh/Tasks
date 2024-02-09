@@ -51,14 +51,6 @@ function RootLayout(props: React.PropsWithChildren) {
   }, [pathName]);
 
   useEffect(() => {
-    if (showAppbar) {
-      if (token === "undefined") {
-        redirect("/pages/auth/login-user");
-      }
-    }
-  }, [token]);
-
-  useEffect(() => {
     setIsCSR(true);
   }, []);
 
@@ -66,7 +58,7 @@ function RootLayout(props: React.PropsWithChildren) {
     <html lang="en">
       <body>
         <I18nextProvider i18n={i18n}>
-          {showAppbar ? (
+          {showAppbar && token ? (
             isCSR && (
               <Box className={fontType.className}>
                 <Appbar />
