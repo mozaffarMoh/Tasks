@@ -111,6 +111,7 @@ const AddTaskDialog = ({
 
   /* Edit Task */
   const EditTask = async () => {
+    setShowLoading(true);
     try {
       const response = await api.put(
         `/tasks/edit-task/${taskID}`,
