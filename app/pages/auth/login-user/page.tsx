@@ -8,9 +8,9 @@ import {
   IconButton,
   TextField,
   Grid,
-  Link,
 } from "@mui/material";
 import * as React from "react";
+import "../auth.scss";
 import Image from "next/image";
 import LoginImage from "../../../../public/images/login.jpg";
 import TasksIcon from "../../../icon.ico";
@@ -132,6 +132,7 @@ const LoginUser = () => {
                 : { width: "80%", height: "100vh" }
             }
             alt="Login Image"
+            className="login-image"
           />
         </Grid>
 
@@ -156,6 +157,7 @@ const LoginUser = () => {
             flexDirection={"column"}
             justifyContent={"flex-end"}
             alignItems={"center"}
+            margin={2}
           >
             <Image src={TasksIcon} alt="TasksIcon" width={50} />
             <h2 style={{ marginTop: "20px" }}>{t("login.user-login")}</h2>
@@ -168,80 +170,83 @@ const LoginUser = () => {
             display={"flex"}
             flexDirection={"column"}
             justifyContent={"flex-start"}
+            className="login-content"
           >
             <form onSubmit={handleSubmit(sendLoginData)}>
-              <FormControl
-                sx={BoxMediaQuery() ? { width: "150px" } : { width: "300px" }}
-              >
-                {/* Email Field */}
-                <FormControl>
-                  <TextField
-                    variant="standard"
-                    type="email"
-                    label={t("login.email")}
-                    value={email}
-                    {...register("email", { required: true })}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                    }}
-                  />
-                  {errors.email && !email && (
-                    <p style={{ color: "red", fontSize: "13px" }}>
-                      {t("validation.email")}
-                    </p>
-                  )}
-                </FormControl>
-                <br />
+              {/* Email Field */}
+              <FormControl className="login-form-control" fullWidth>
+                <TextField
+                  variant="standard"
+                  type="email"
+                  label={t("login.email")}
+                  value={email}
+                  {...register("email", { required: true })}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                {errors.email && !email && (
+                  <p style={{ color: "red", fontSize: "13px" }}>
+                    {t("validation.email")}
+                  </p>
+                )}
+              </FormControl>
+              <br />
 
-                {/* Password Field */}
-                <FormControl>
-                  <TextField
-                    variant="standard"
-                    label={t("login.password")}
-                    value={password}
-                    {...register("password", { required: true })}
-                    onChange={(e) => setPassword(e.target.value)}
-                    type={showPassword ? "text" : "password"}
-                    /* endAdornment has Eye icon to show or hide password */
-                    InputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <IconButton
-                            aria-label="toggle password visibility"
-                            onClick={handleClickShowPassword}
-                          >
-                            {password ? (
-                              showPassword ? (
-                                <VisibilityOff />
-                              ) : (
-                                <Visibility />
-                              )
-                            ) : null}
-                          </IconButton>
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                  {errors.password && !password && (
-                    <p style={{ color: "red", fontSize: "13px" }}>
-                      {t("validation.password")}
-                    </p>
-                  )}
-                </FormControl>
-                <br />
+              {/* Password Field */}
+              <FormControl className="login-form-control" fullWidth>
+                <TextField
+                  variant="standard"
+                  label={t("login.password")}
+                  value={password}
+                  {...register("password", { required: true })}
+                  onChange={(e) => setPassword(e.target.value)}
+                  type={showPassword ? "text" : "password"}
+                  /* endAdornment has Eye icon to show or hide password */
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                        >
+                          {password ? (
+                            showPassword ? (
+                              <VisibilityOff />
+                            ) : (
+                              <Visibility />
+                            )
+                          ) : null}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+                {errors.password && !password && (
+                  <p style={{ color: "red", fontSize: "13px" }}>
+                    {t("validation.password")}
+                  </p>
+                )}
+              </FormControl>
+              <br />
 
-                {/* Login Button */}
-                <FormControl>
-                  <Button type="submit" color="secondary" variant="contained">
-                    {t("login.login-button")}
-                  </Button>
-                </FormControl>
+              {/* Login Button */}
+              <FormControl className="login-form-control" fullWidth>
+                <Button type="submit" color="secondary" variant="contained">
+                  {t("login.login-button")}
+                </Button>
               </FormControl>
             </form>
           </Grid>
 
           {/* Pages Links */}
-          <Grid item xs={4} display={"flex"} flexDirection={"column"}>
+          <Grid
+            item
+            xs={4}
+            display={"flex"}
+            flexDirection={"column"}
+            margin={2}
+          >
             <a onClick={goToAdminLoginPage}>{t("login.admin-link")}</a>
             <br />
             <a onClick={goToRegisterPage}>{t("login.register-link")}</a>

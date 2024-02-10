@@ -7,3 +7,33 @@ a {
         color: rgb(147, 51, 236, 0.7);
     }
 }
+
+.login-content {
+    width: 65%;
+
+    form {
+        width: 100%;
+        padding: 40px;
+
+        .login-form-control {
+            margin: 10px;
+
+            input {
+                width: 70%;
+            }
+        }
+    }
+}
+
+
+@media (max-width : 800px) {
+    .login-image {
+        width: 380px !important;
+        height: 400px !important;
+    }
+
+    .login-content {
+        width: 90%;
+
+    }
+}
