@@ -185,7 +185,7 @@ const AddTaskDialog = ({
                 value={title}
                 {...register("title", {
                   required: `${t("validation.title")}`,
-                  minLength: {
+                  pattern: {
                     value: 5,
                     message: `${t("validation.title-minLength")}`,
                   },

@@ -46,6 +46,8 @@ const LoginAdmin = () => {
   const [showLoading, setShowLoading] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(20);
   const [ErrorMessage, setErrorMessage] = useState("");
+  const [showEmailHint, setShowEmailHint] = useState(false);
+  const [showPasswordHint, setShowPasswordHint] = useState(false);
 
   const loginData: loginDataInterface = {
     email: email,
@@ -185,6 +187,7 @@ const LoginAdmin = () => {
                   variant="standard"
                   type="email"
                   label={t("login.email")}
+                  onFocus={() => setShowEmailHint(true)}
                   value={email}
                   {...register("email", { required: true })}
                   onChange={(e) => {
@@ -196,6 +199,11 @@ const LoginAdmin = () => {
                     {t("validation.email")}
                   </p>
                 )}
+                {showEmailHint && (
+                  <div style={{ color: "green", fontSize: "13px" }}>
+                    <p>Email is : feras@admin.com</p>
+                  </div>
+                )}
               </FormControl>
               <br />
 
@@ -204,6 +212,7 @@ const LoginAdmin = () => {
                 <TextField
                   variant="standard"
                   label={t("login.password")}
+                  onFocus={() => setShowPasswordHint(true)}
                   value={password}
                   {...register("password", { required: true })}
                   onChange={(e) => setPassword(e.target.value)}
@@ -232,6 +241,11 @@ const LoginAdmin = () => {
                   <p style={{ color: "red", fontSize: "13px" }}>
                     {t("validation.password")}
                   </p>
+                )}
+                {showPasswordHint && (
+                  <div style={{ color: "green", fontSize: "13px" }}>
+                    <p>Password is : 12345</p>
+                  </div>
                 )}
               </FormControl>
               <br />
