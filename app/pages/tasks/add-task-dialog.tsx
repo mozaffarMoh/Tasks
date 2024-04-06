@@ -41,7 +41,7 @@ const AddTaskDialog = ({
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  }:any = useForm();
   const [rowData, setRowData] = React.useState();
   const [users, setUsers] = React.useState([]);
   const [showLoading, setShowLoading] = React.useState(false);
