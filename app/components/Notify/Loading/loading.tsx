@@ -8,7 +8,7 @@ import BoxMediaQuery from "@/app/MediaQuerys/BoxMedia";
 export default function Loading({ progress }: any) {
   return (
     <Box
-      position={BoxMediaQuery() ? "fixed" : "relative"}
+      position={"relative"}
       width={"100%"}
       p={1}
       display={"flex"}
